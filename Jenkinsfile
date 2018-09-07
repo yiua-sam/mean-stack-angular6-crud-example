@@ -5,6 +5,7 @@ def img_name = 'book-store'
 def img_tag = '1'
 
 pipeline {
+    agent { label 'master' }
     stages {
         stage('Login to Docker') {
             steps {
