@@ -7,12 +7,6 @@ def img_tag = '1'
 pipeline {
     agent { label 'master' }
     stages {
-     #   stage('Login to Docker') {
-      #      steps {
-       #         sh "docker login ${icp_dev_registry} -u admin -p passw0rd"
-        #        sh "echo logged in"
-         #   }
-       # }
         stage('Push to cluster-dev docker registry') {
             steps {
                 sh "docker build . -t ${icp_dev_registry}/${img_group_name}/${img_name}:${img_tag}"
