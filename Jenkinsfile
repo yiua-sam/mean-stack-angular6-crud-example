@@ -10,6 +10,8 @@ pipeline {
             steps {
                 sh "docker login ${icp_dev_registry}"
                 sh "echo logged in"
+            }
+        }
         stage('Push to cluster-dev docker registry') {
             steps {
                 sh "docker build . -t ${icp_dev_registry}/${img_group_name}/${img_name}:${img_tag}"
