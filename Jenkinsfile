@@ -6,7 +6,7 @@ def img_tag = '1'
 
 pipeline {
     agent { label 'master' }
-    #stages {
+    stages {
      #   stage('Login to Docker') {
       #      steps {
        #         sh "docker login ${icp_dev_registry} -u admin -p passw0rd"
