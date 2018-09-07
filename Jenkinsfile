@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Login to Docker') {
             steps {
-                sh "sudo docker login ${icp_dev_registry} -u admin -p passw0rd"
+                sh "docker login ${icp_dev_registry} -u admin -p passw0rd"
                 sh "echo logged in"
             }
         }
