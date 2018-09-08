@@ -3,9 +3,11 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+console.log('The value of MONGOHOST is:', process.env.MONGOHOST);
+var MONGOHOST = process.env.MONGOHOST|| 'localhost';
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://mongo/mean-angular6')
+mongoose.connect('mongodb://'+MONGOHOST+'/mean-angular6')
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
