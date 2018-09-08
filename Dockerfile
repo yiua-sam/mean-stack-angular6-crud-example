@@ -19,4 +19,4 @@ RUN npm install -g @angular/cli
 COPY . /usr/src/app
 
 # start app
-CMD npm serve
+CMD npm start
