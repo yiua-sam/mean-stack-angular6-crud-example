@@ -2,7 +2,7 @@ def icp_dev_registry = 'mycluster.icp:8500'
 
 def img_group_name = 'jenkins'
 def img_name = 'book-store'
-def img_tag = '3'
+def img_tag = '4'
 
 pipeline {
     agent { label 'master' }
