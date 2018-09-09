@@ -1,5 +1,5 @@
 # base image
-FROM node:9.6.1
+FROM node:9.6.1-alpine
 
 # set working directory
 RUN mkdir -p /usr/src/app
