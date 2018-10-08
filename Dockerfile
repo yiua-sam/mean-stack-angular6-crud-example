@@ -7,7 +7,7 @@ RUN npm install
 
 COPY . .
 
-CMD ng e2e
+CMD npm e2e
 
 # base image
 FROM node:9.6.1-alpine
