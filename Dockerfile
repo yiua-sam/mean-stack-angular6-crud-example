@@ -3,7 +3,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 ADD package.json /usr/src/app/package.json
 
-RUN sudo npm install
+RUN npm install
 
 COPY . .
 
