@@ -1,5 +1,6 @@
 FROM weboaks/node-karma-protractor-chrome:alpine-node9
 WORKDIR /usr/src/app
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package*.json ./
 ADD package.json /usr/src/app/package.json
 
