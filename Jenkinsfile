@@ -11,7 +11,6 @@ pipeline {
     stages {
         stage('Built image') {
             steps {
-                sh "sudo docker build . -t ${icp_dev_registry}/${img_group_name}/${img_name}:${img_tag}"
                 sh "sudo docker build . -t ${docker_hub_username}/${img_name}:${img_tag}"
             }
         }
