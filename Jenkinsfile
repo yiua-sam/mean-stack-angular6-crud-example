@@ -2,7 +2,7 @@ def docker_hub_username = 'depauna'
 
 def img_group_name = 'jenkins'
 def img_name = 'book-store'
-def img_tag = 'stable'
+def img_tag = '11'
 
 def icp_dev_registry = 'mycluster.icp:8500'
 
