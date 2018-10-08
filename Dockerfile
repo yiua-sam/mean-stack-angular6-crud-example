@@ -23,5 +23,5 @@ RUN npm install
 COPY . .
 
 # start app
-RUN npm e2e
+RUN npm test
 CMD npm start
