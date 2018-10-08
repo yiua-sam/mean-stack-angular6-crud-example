@@ -17,11 +17,11 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 ADD package.json /usr/src/app/package.json
 
-RUN npm test
 RUN npm install
 
 # add app
 COPY . .
 
 # start app
+RUN npm e2e
 CMD npm start
