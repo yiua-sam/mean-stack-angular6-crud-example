@@ -22,11 +22,11 @@ pipeline {
                 }
             }
         }
-        stage('Tag and push image for local ICP cluster') {
-            steps {
-                sh "docker tag ${docker_hub_username}/${img_name}:${img_tag} ${icp_dev_registry}/${img_group_name}/${img_name}:${img_tag}"
-                sh "docker push ${icp_dev_registry}/${img_group_name}/${img_name}:${img_tag}"
-            }
-        }
+//        stage('Tag and push image for local ICP cluster') {
+//            steps {
+//                sh "docker tag ${docker_hub_username}/${img_name}:${img_tag} ${icp_dev_registry}/${img_group_name}/${img_name}:${img_tag}"
+//                sh "docker push ${icp_dev_registry}/${img_group_name}/${img_name}:${img_tag}"
+//            }
+//        }
     }
 }
