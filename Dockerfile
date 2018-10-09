@@ -1,12 +1,3 @@
-FROM weboaks/node-karma-protractor-chrome:alpine-node9
-WORKDIR /usr/src/app
-COPY package*.json ./
-ADD package.json /usr/src/app/package.json
-
-COPY . .
-
-CMD npm e2e
-
 # base image
 FROM node:9.6.1-alpine
 
@@ -23,5 +14,4 @@ RUN npm install
 COPY . .
 
 # start app
-RUN npm test
 CMD npm start
