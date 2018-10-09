@@ -1,10 +1,9 @@
 def docker_hub_username = 'depauna'
-
-def img_group_name = 'jenkins'
 def img_name = 'book-store'
 def img_tag = 'latest'
 
 def icp_dev_registry = 'mycluster.icp:8500'
+def img_group_name = 'jenkins'
 
 pipeline {
     agent { label 'master' }
@@ -21,6 +20,13 @@ pipeline {
                     sh "docker push ${docker_hub_username}/${img_name}:${img_tag}"
                     sh "docker logout"
                 }
+            }
+        }
+        stage('Deploy book-store helm chart') {
+            steps {
+                sh "helm ls"
+                // sh "git clone https://github.com/depauna/meetup-resources.git"
+                // sh "chmod u+x meetup-resources/deployapp && ./meetup-resources/deployapp ${docker_hub_username} ${img_name} ${img_tag}"
             }
         }
 //        stage('Tag and push image for local ICP cluster') {
