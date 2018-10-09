@@ -15,9 +15,11 @@ pipeline {
             }
         }
         stage('Push image to Docker Hub') {
-            steps withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'Dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]){
-                sh "docker login -u $USERNAME -p $PASSWORD"
-                sh "docker push ${docker_hub_username}/${img_name}:${img_tag}"
+            steps {
+                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'Dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+                    sh "docker login -u $USERNAME -p $PASSWORD"
+                    sh "docker push ${docker_hub_username}/${img_name}:${img_tag}"
+                }
             }
         }
         stage('Tag and push image for local ICP cluster') {
