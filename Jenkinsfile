@@ -30,6 +30,7 @@ pipeline {
                     sh "helm ls --tls"
                     // sh "git clone https://github.com/depauna/meetup-resources.git"
                     // sh "chmod u+x meetup-resources/deployapp && ./meetup-resources/deployapp ${docker_hub_username} ${img_name} ${img_tag}"
+                }
             }
         }
 //        stage('Tag and push image for local ICP cluster') {
