@@ -24,8 +24,8 @@ pipeline {
         }
         stage('Deploy book-store helm chart') {
             steps {
-                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'Dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-                    sh "bx pr login -a https://192.168.56.150:8443 --skip-ssl-validation -u admin -p passw0rd -c id-mycluster-account"
+                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'ICP', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+                    sh "bx pr login -a https://192.168.56.150:8443 --skip-ssl-validation -u $USERNAME -p $PASSWORD -c id-mycluster-account"
                     sh "bx pr cluster-config mycluster"
                     sh "helm ls --tls"
                     // sh "git clone https://github.com/depauna/meetup-resources.git"
