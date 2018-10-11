@@ -5,8 +5,8 @@ def img_tag = 'latest'
 def icp_dev_registry = 'mycluster.icp:8500'
 def img_group_name = 'jenkins'
 
-def firstName = Natan
-def lastName = Depauw
+def firstName = 'Natan'
+def lastName = 'Depauw'
 
 pipeline {
     agent { label 'master' }
