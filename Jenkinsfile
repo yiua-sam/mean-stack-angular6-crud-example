@@ -35,6 +35,7 @@ pipeline {
                     // sh "git init ."
                     // sh "git remote add -t \* -f origin  https://github.com/depauna/meetup-resources.git"
                     sh "git checkout master"
+                    sh "git pull"
                     sh "chmod u+x /var/jenkins_home/workspace/book-store/meetup-resources/meetup-resources/deployapp.sh && /var/jenkins_home/workspace/book-store/meetup-resources/meetup-resources/deployapp.sh ${docker_hub_username} ${img_name} ${img_tag} ${firstName} ${lastName}"
                 }
             }
