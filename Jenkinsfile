@@ -31,11 +31,11 @@ pipeline {
                     sh "bx pr login -a https://192.168.56.150:8443 --skip-ssl-validation -u $USERNAME -p $PASSWORD -c id-mycluster-account"
                     sh "bx pr cluster-config mycluster"
                     sh "helm ls --tls --tls-ca-cert ~/.helm/ca.pem --tls-cert ~/.helm/cert.pem --tls-key ~/.helm/key.pem"
-                    sh "cd /opt"
+                    // sh "cd /opt"
                     // sh "git init ."
-                    // sh "git remote add -t \\* -f origin  https://github.com/depauna/meetup-resources.git >> /dev/null"
+                    // sh "git remote add -t \* -f origin  https://github.com/depauna/meetup-resources.git"
                     sh "git checkout master"
-                    sh "chmod u+x /opt/meetup-resources/deployapp.sh && /opt/meetup-resources/meetup-resources/deployapp.sh ${docker_hub_username} ${img_name} ${img_tag} ${firstName} ${lastName}"
+                    sh "chmod u+x /var/jenkins_home/workspace/book-store/meetup-resources/meetup-resources/deployapp.sh && /var/jenkins_home/workspace/book-store/meetup-resources/meetup-resources/deployapp.sh ${docker_hub_username} ${img_name} ${img_tag} ${firstName} ${lastName}"
                 }
             }
         }
