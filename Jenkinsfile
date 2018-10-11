@@ -32,8 +32,8 @@ pipeline {
                     sh "bx pr cluster-config mycluster"
                     sh "helm ls --tls --tls-ca-cert ~/.helm/ca.pem --tls-cert ~/.helm/cert.pem --tls-key ~/.helm/key.pem"
                     sh "cd /opt"
-                    sh "git init ."
-                    sh "git remote add -t \\* -f origin  https://github.com/depauna/meetup-resources.git >> /dev/null"
+                    // sh "git init ."
+                    // sh "git remote add -t \\* -f origin  https://github.com/depauna/meetup-resources.git >> /dev/null"
                     sh "git checkout master"
                     sh "chmod u+x /opt/meetup-resources/deployapp.sh && /opt/meetup-resources/meetup-resources/deployapp.sh ${docker_hub_username} ${img_name} ${img_tag} ${firstName} ${lastName}"
                 }
