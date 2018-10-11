@@ -5,6 +5,9 @@ def img_tag = 'latest'
 def icp_dev_registry = 'mycluster.icp:8500'
 def img_group_name = 'jenkins'
 
+def firstName = Natan
+def lastName = Depauw
+
 pipeline {
     agent { label 'master' }
     stages {
@@ -28,8 +31,8 @@ pipeline {
                     sh "bx pr login -a https://192.168.56.150:8443 --skip-ssl-validation -u $USERNAME -p $PASSWORD -c id-mycluster-account"
                     sh "bx pr cluster-config mycluster"
                     sh "helm ls --tls --tls-ca-cert ~/.helm/ca.pem --tls-cert ~/.helm/cert.pem --tls-key ~/.helm/key.pem"
-                    // sh "git clone https://github.com/depauna/meetup-resources.git"
-                    // sh "chmod u+x meetup-resources/deployapp && ./meetup-resources/deployapp ${docker_hub_username} ${img_name} ${img_tag}"
+                    sh "git clone https://github.com/depauna/meetup-resources.git"
+                    sh "chmod u+x meetup-resources/deployapp.sh && ./meetup-resources/deployapp.sh ${docker_hub_username} ${img_name} ${img_tag} ${firstName} ${lastName}"
                 }
             }
         }
