@@ -32,7 +32,7 @@ pipeline {
                     sh "bx pr cluster-config mycluster"
                     sh "helm ls --tls --tls-ca-cert ~/.helm/ca.pem --tls-cert ~/.helm/cert.pem --tls-key ~/.helm/key.pem"
                     sh "git clone https://github.com/depauna/meetup-resources.git"
-                    sh "chmod u+x meetup-resources/deployapp.sh && ./meetup-resources/deployapp.sh ${docker_hub_username} ${img_name} ${img_tag} ${firstName} ${lastName}"
+                    sh "chmod u+x /var/jenkins_home/workspace/book-store/meetup-resources/meetup-resources/deployapp.sh && /var/jenkins_home/workspace/book-store/meetup-resources/meetup-resources/deployapp.sh ${docker_hub_username} ${img_name} ${img_tag} ${firstName} ${lastName}"
                 }
             }
         }
