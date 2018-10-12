@@ -30,8 +30,7 @@ pipeline {
                 withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'ICP', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
                     // sh "bx pr login -a https://192.168.56.150:8443 --skip-ssl-validation -u $USERNAME -p $PASSWORD -c id-mycluster-account"
                     // sh "bx pr cluster-config mycluster"
-                    sh "export HELM_HOME=~/.helm"
-                    sh "helm ls --tls"
+                    sh "helm ls --tls --tls-ca-cert ~/.helm/ca.pem --tls-cert ~/.helm/cert.pem --tls-key ~/.helm/key.pem"
                     sh "(git clone https://github.com/depauna/meetup-resources.git || cd meetup-resources && git pull)"
                     sh "pwd"
                     sh "chmod u+x /var/jenkins_home/workspace/book-store/meetup-resources/meetup-resources/deployapp.sh && /var/jenkins_home/workspace/book-store/meetup-resources/meetup-resources/deployapp.sh ${docker_hub_username} ${img_name} ${img_tag} ${firstName} ${lastName}"
