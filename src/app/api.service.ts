@@ -15,7 +15,7 @@ export class ApiService {
   private apiUrl: string;
 
   constructor(private http: HttpClient) {
-    apiUrl = '/' + environment.apiUrl + '/api' ;
+    this.apiUrl = '/' + environment.apiUrl + '/api' ;
   }
 
   private handleError(error: HttpErrorResponse) {
@@ -39,27 +39,27 @@ export class ApiService {
   }
 
   getBooks(): Observable<any> {
-    return this.http.get(apiUrl, httpOptions).pipe(
+    return this.http.get(this.apiUrl, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
 
   getBook(id: string): Observable<any> {
-    const url = `${apiUrl}/${id}`;
+    const url = `${this.apiUrl}/${id}`;
     return this.http.get(url, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
 
   postBook(data): Observable<any> {
-    return this.http.post(apiUrl, data, httpOptions)
+    return this.http.post(this.apiUrl, data, httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
 
   updateBook(id: string, data): Observable<any> {
-    const url = `${apiUrl}/${id}`;
+    const url = `${this.apiUrl}/${id}`;
     return this.http.put(url, data, httpOptions)
       .pipe(
         catchError(this.handleError)
@@ -67,7 +67,7 @@ export class ApiService {
   }
 
   deleteBook(id: string): Observable<{}> {
-    const url = `${apiUrl}/${id}`;
+    const url = `${this.apiUrl}/${id}`;
     return this.http.delete(url, httpOptions)
       .pipe(
         catchError(this.handleError)
