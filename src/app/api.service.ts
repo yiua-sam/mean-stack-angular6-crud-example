@@ -15,7 +15,7 @@ export class ApiService {
   private apiUrl: string;
 
   constructor(private http: HttpClient) {
-    this.apiUrl = '/' + environment.apiUrl + '/api' ;
+    apiUrl = '/' + environment.apiUrl + '/api' ;
   }
 
   private handleError(error: HttpErrorResponse) {
