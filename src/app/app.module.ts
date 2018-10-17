@@ -11,6 +11,9 @@ import { BookCreateComponent } from './book-create/book-create.component';
 import { BookEditComponent } from './book-edit/book-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {Component} from '@angular/core';
+import {APP_BASE_HREF} from '@angular/common';
+
 import {
   MatInputModule,
   MatPaginatorModule,
@@ -74,7 +77,7 @@ const appRoutes: Routes = [
     MatCardModule,
     MatFormFieldModule
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: '/user1'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
