@@ -14,5 +14,4 @@ RUN npm install
 COPY . .
 
 # start app
-# CMD ["npm", "start"]
-CMD ng build --base-href /user2/ && node ./bin/www
+CMD ["npm", "start"]

@@ -5,7 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var MONGOHOST = process.env.MONGOHOST|| 'localhost';
 console.log('The value of MONGOHOST is:', process.env.MONGOHOST);
-var CONTEXTROOT = process.env.CONTEXTROOT|| 'bookstore';
+var CONTEXTROOT = process.env.CONTEXTROOT|| '/bookstore/';
 console.log('The value of CONTEXTROOT is:', process.env.CONTEXTROOT);
 
 var mongoose = require('mongoose');
