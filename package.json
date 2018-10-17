@@ -6,7 +6,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng build --$npm_package_config_context --base-href /$npm_package_config_context/ && node ./bin/www",
+    "start": "ng build --base-href /$npm_package_config_context/ && node ./bin/www",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
