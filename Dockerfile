@@ -1,6 +1,7 @@
 # base image
 FROM node:9.6.1-alpine
 
+ARG var
 # set working directory
 WORKDIR /usr/src/app
 
@@ -14,5 +15,5 @@ RUN npm install
 COPY . .
 
 # start app
-RUN npm config set mean-angular6:context 'user2'
+RUN npm config set mean-angular6:context '${var}'
 CMD ["npm", "start"]
