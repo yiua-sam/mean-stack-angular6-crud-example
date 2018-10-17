@@ -2,7 +2,7 @@ def docker_hub_username = 'depauna'
 def img_name = 'book-store'
 def img_tag = 'user1'
 
-def userName = user1
+def userName = 'user1'
 
 pipeline {
     agent { label 'master' }
