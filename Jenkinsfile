@@ -1,12 +1,8 @@
 def docker_hub_username = 'depauna'
 def img_name = 'book-store'
-def img_tag = 'test'
+def img_tag = 'user1'
 
-def icp_dev_registry = 'mycluster.icp:8500'
-def img_group_name = 'jenkins'
-
-def firstName = 'Natan'
-def lastName = 'Depauw'
+def userName = user1
 
 pipeline {
     agent { label 'master' }
@@ -25,23 +21,11 @@ pipeline {
                 }
             }
         }
-        stage('Deploy book-store helm chart') {
-            steps {
-                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'ICP', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-                    // sh "bx pr login -a https://192.168.56.150:8443 --skip-ssl-validation -u $USERNAME -p $PASSWORD -c id-mycluster-account"
-                    // sh "bx pr cluster-config mycluster"
-                    sh "helm ls --tls --tls-ca-cert ~/.helm/ca.pem --tls-cert ~/.helm/cert.pem --tls-key ~/.helm/key.pem"
-                    sh "rm -rf meetup-resources"
-                    sh "(git clone https://github.com/depauna/meetup-resources.git || cd meetup-resources && git reset --hard && git pull origin master)"
-                    sh "pwd"
-                    sh "chmod u+x /var/jenkins_home/workspace/book-store/meetup-resources/meetup-resources/deployapp.sh && /var/jenkins_home/workspace/book-store/meetup-resources/meetup-resources/deployapp.sh ${docker_hub_username} ${img_name} ${img_tag} ${firstName} ${lastName}"
-                }
-            }
-        }
-//        stage('Tag and push image for local ICP cluster') {
+//         stage('Deploy book-store helm chart') {
 //            steps {
-//                sh "docker tag ${docker_hub_username}/${img_name}:${img_tag} ${icp_dev_registry}/${img_group_name}/${img_name}:${img_tag}"
-//                sh "docker push ${icp_dev_registry}/${img_group_name}/${img_name}:${img_tag}"
+//                    sh "helm ls --tls --tls-ca-cert ~/.helm/ca.pem --tls-cert ~/.helm/cert.pem --tls-key ~/.helm/key.pem"
+//                    sh "(git clone https://github.com/depauna/meetup-resources.git || cd meetup-resources && git reset --hard && git pull origin master)"
+//                    sh "chmod u+x /var/jenkins_home/workspace/book-store/meetup-resources/meetup-resources/deployapp.sh && /var/jenkins_home/workspace/book-store/meetup-resources/meetup-resources/deployapp.sh ${docker_hub_username} ${img_name} ${img_tag} ${userName}
 //            }
 //        }
     }
