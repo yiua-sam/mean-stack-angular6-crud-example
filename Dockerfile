@@ -14,5 +14,5 @@ RUN npm install
 COPY . .
 
 # start app
-RUN npm config set mean-angular6:context '/user2/'
+# RUN npm config set mean-angular6:context '/user2/'
 CMD ["npm", "start"]
