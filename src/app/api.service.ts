@@ -7,7 +7,7 @@ const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 
-const apiUrl =  "${process.env.API_URL}"
+const apiUrl =  "{process.env.API_URL}"
 
 @Injectable({
   providedIn: 'root'
