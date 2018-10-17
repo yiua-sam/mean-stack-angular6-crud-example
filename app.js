@@ -21,12 +21,12 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use(+CONTEXTROOT+, express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use(+CONTEXTROOT+'books', express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use(+CONTEXTROOT+'book-details/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use(+CONTEXTROOT+'book-create', express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use(+CONTEXTROOT+'book-edit/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use(+CONTEXTROOT+'api', apiRouter);
+app.use(CONTEXTROOT, express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use(CONTEXTROOT+'books', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use(CONTEXTROOT+'book-details/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use(CONTEXTROOT+'book-create', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use(CONTEXTROOT+'book-edit/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use(CONTEXTROOT+'api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
