@@ -3,8 +3,10 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-console.log('The value of MONGOHOST is:', process.env.MONGOHOST);
 var MONGOHOST = process.env.MONGOHOST|| 'localhost';
+console.log('The value of MONGOHOST is:', process.env.MONGOHOST);
+var CONTEXTROOT = process.env.CONTEXTROOT|| 'bookstore';
+console.log(‘The value of CONTEXTROOT is:’, process.env.CONTEXTROOT);
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://'+MONGOHOST+'/mean-angular6')
@@ -19,12 +21,12 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use('/user1/', express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use('/user1/books', express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use('/user1/book-details/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use('/user1/book-create', express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use('/user1/book-edit/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use('/user1/api', apiRouter);
+app.use(+CONTEXTROOT+, express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use(+CONTEXTROOT+'books', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use(+CONTEXTROOT+'book-details/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use(+CONTEXTROOT+'book-create', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use(+CONTEXTROOT+'book-edit/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use(+CONTEXTROOT+'api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
