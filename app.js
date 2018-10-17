@@ -19,8 +19,12 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use('/', express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use('/api', apiRouter);
+app.use('/user1/', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use('/user1/books', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use('/user1/book-details/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use('/user1/book-create', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use('/user1/book-edit/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use('/user1/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
