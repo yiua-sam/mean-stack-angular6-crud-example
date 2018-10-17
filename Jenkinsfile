@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Built image') {
             steps {
-                sh "docker build . -t ${docker_hub_username}/${img_name}:${img_tag}"
+                sh "docker build . --build-arg var=user1 -t ${docker_hub_username}/${img_name}:${img_tag}"
             }
         }
         stage('Push image to Docker Hub') {
