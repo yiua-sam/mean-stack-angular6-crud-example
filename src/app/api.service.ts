@@ -2,21 +2,21 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
-import { environment } from '../environments/environment';
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
+
+//console.log('The value of APIURL is:', process.env.API_URL);
+
+const apiUrl =  ""
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl: string;
 
-  constructor(private http: HttpClient) {
-    this.apiUrl = '/' + environment.apiUrl + '/api' ;
-  }
+  constructor(private http: HttpClient) { }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -39,27 +39,27 @@ export class ApiService {
   }
 
   getBooks(): Observable<any> {
-    return this.http.get(this.apiUrl, httpOptions).pipe(
+    return this.http.get(apiUrl, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
 
   getBook(id: string): Observable<any> {
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${apiUrl}/${id}`;
     return this.http.get(url, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
 
   postBook(data): Observable<any> {
-    return this.http.post(this.apiUrl, data, httpOptions)
+    return this.http.post(apiUrl, data, httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
 
   updateBook(id: string, data): Observable<any> {
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${apiUrl}/${id}`;
     return this.http.put(url, data, httpOptions)
       .pipe(
         catchError(this.handleError)
@@ -67,7 +67,7 @@ export class ApiService {
   }
 
   deleteBook(id: string): Observable<{}> {
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${apiUrl}/${id}`;
     return this.http.delete(url, httpOptions)
       .pipe(
         catchError(this.handleError)
