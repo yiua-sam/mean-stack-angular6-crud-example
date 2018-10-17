@@ -1,7 +1,7 @@
 {
   "name": "mean-angular6",
   "config": {
-    "context": "/user2/"
+    "context": "/bookstore/"
   },
   "version": "0.0.0",
   "scripts": {
