@@ -63,6 +63,230 @@
                   "with": "src/environments/environment.user2.ts"
                 }
               ]
+            },
+            "user3": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user3.ts"
+                }
+              ]
+            },
+            "user4": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user4.ts"
+                }
+              ]
+            },
+            "user5": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user5.ts"
+                }
+              ]
+            },
+            "user6": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user6.ts"
+                }
+              ]
+            },
+            "user7": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user7.ts"
+                }
+              ]
+            },
+            "user8": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user8.ts"
+                }
+              ]
+            },
+            "user9": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user9.ts"
+                }
+              ]
+            },
+            "user10": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user10.ts"
+                }
+              ]
+            },
+            "user11": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user11.ts"
+                }
+              ]
+            },
+            "user12": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user12.ts"
+                }
+              ]
+            },
+            "user13": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user13.ts"
+                }
+              ]
+            },
+            "user14": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user14.ts"
+                }
+              ]
+            },
+            "user15": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user15.ts"
+                }
+              ]
+            },
+            "user16": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user16.ts"
+                }
+              ]
+            },
+            "user17": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user17.ts"
+                }
+              ]
+            },
+            "user18": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user18.ts"
+                }
+              ]
+            },
+            "user19": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user19.ts"
+                }
+              ]
+            },
+            "user20": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user20.ts"
+                }
+              ]
+            },
+            "user21": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user21.ts"
+                }
+              ]
+            },
+            "user22": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user22.ts"
+                }
+              ]
+            },
+            "user23": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user23.ts"
+                }
+              ]
+            },
+            "user24": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user24.ts"
+                }
+              ]
+            },
+            "user25": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user25.ts"
+                }
+              ]
+            },
+            "user26": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user26.ts"
+                }
+              ]
+            },
+            "user27": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user27.ts"
+                }
+              ]
+            },
+            "user28": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user28.ts"
+                }
+              ]
+            },
+            "user29": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user29.ts"
+                }
+              ]
+            },
+            "user30": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.user30.ts"
+                }
+              ]
             }
           }
         },
