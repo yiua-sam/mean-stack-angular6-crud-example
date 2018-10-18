@@ -9,8 +9,8 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 ADD package.json /usr/src/app/package.json
 
-RUN npm config set proxy null
-RUN npm install
+# RUN npm config set proxy null
+RUN npm install -d
 
 # add app
 COPY . .
