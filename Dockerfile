@@ -9,11 +9,13 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 ADD package.json /usr/src/app/package.json
 
+RUN npm config set proxy null
 RUN npm install
 
 # add app
 COPY . .
 
 # start app
+
 RUN npm config set mean-angular6:context '${var}'
 CMD ["npm", "start"]
