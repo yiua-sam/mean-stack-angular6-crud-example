@@ -10,7 +10,8 @@ COPY package*.json ./
 ADD package.json /usr/src/app/package.json
 
 # RUN npm config set proxy null
-RUN npm install -d
+RUN npm config set registry http://registry.npmjs.org/
+RUN npm install
 
 # add app
 COPY . .
