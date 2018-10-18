@@ -1,4 +1,4 @@
-def docker_hub_username = '<docker_username>'
+def docker_hub_username = 'yiuatam'
 def img_name = 'book-store'
 def img_tag = 'user7'
 
@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Built image') {
             steps {
-                sh "docker build . --build-arg var=user1 -t ${docker_hub_username}/${img_name}:${img_tag}"
+                sh "docker build . --build-arg var=user7 -t ${docker_hub_username}/${img_name}:${img_tag}"
             }
         }
         stage('Push image to Docker Hub') {
