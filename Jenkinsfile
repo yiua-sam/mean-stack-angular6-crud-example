@@ -1,6 +1,6 @@
 def docker_hub_username = 'yiuatam'
 def img_name = 'book-store'
-def img_tag = 'user7'
+def img_tag = 'test'
 
 def userName = 'user7'
 
